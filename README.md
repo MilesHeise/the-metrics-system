@@ -1,4 +1,4 @@
-- The Metrics System
+# The Metrics System
 
 _Because dad jokes are fun_
 
