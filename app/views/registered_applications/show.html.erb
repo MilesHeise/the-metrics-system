@@ -1,0 +1,14 @@
+<div>
+  <h1><%= @registered_application.name %></h1>
+  <small>You've been tracking this app since <%= time_ago_in_words(@registered_application.created_at) %> ago.</small>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <p><%= @registered_application.url %></p>
+  </div>
+
+  <div class="col-md-4 text-center">
+    <%= link_to "Edit Details", edit_registered_application_path(@registered_application), class: 'btn btn-success btn-lg' %>
+  </div>
+</div>

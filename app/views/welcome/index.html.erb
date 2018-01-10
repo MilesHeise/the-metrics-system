@@ -1,3 +1,7 @@
 <h1>Welcome!</h1>
 <p>Some day perhaps there will be content here!</p>
 <p>Some day much later than that the sun will expand and engulf the Earth!</p>
+
+<% if user_signed_in? %>
+  <%= link_to "Register An App?", new_registered_application_path, class: 'btn btn-success btn-lg' %>
+<% end %>

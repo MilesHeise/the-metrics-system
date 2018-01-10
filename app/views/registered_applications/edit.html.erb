@@ -1,0 +1,14 @@
+<h1>Edit Your App Registration Details</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>Update your app details</p>
+  </div>
+
+  <div class="col-md-8">
+    <%= button_to "Delete Registration", @registered_application, method: :delete, class: 'btn btn-danger',
+      data: { confirm: 'You will lose all tracked data, even if you re-register.' } %>
+
+    <%= render partial: 'form', locals: { registered_application: @registered_application } %>
+  </div>
+</div>

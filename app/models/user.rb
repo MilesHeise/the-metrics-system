@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, uniqueness: true
+
+  has_many  :registered_applications, dependent: :destroy
 end
