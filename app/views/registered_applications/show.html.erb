@@ -8,9 +8,9 @@
     <h3><%= @registered_application.url %></h3>
     <ul>
     <% @events.sort_by { |_k,v| v.count }.reverse.each do |k,v| %>
-    <li><strong><%= k %>:</strong>  has happened  <em><%= v.count %></em>  times</li>
+      <li><strong><%= k %>:</strong>  has happened  <em><%= v.count %></em>  times</li>
     <% end %>
-  </ul>
+    </ul>
   </div>
 
   <div class="col-md-4 text-center">

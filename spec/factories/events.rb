@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :event do
-    name "MyString"
-    registered_application nil
+    name Faker::Hacker.verb
+    association :registered_application
   end
 end

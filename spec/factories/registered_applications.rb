@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :registered_application do
-    name "MyString"
-    url "MyText"
-    user_id 1
+    name Faker::Company.unique.bs
+    url Faker::Internet.unique.url
+    association :user
   end
 end
