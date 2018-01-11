@@ -10,7 +10,7 @@ require 'faker'
 end
 users = User.all
 
-# Creat Registered Applications
+# Create Registered Applications
 15.times do
   RegisteredApplication.create!(
     name:  Faker::Company.unique.bs,
@@ -35,6 +35,23 @@ member = User.create!(
   )
 end
 
+# Create events
+100.times do
+  Event.create!(
+    registered_application: registered_applications.sample,
+    name: Faker::Hacker.verb
+  )
+end
+
+100.times do
+  Event.create!(
+    registered_application: registered_applications.where(id: [16, 17, 18, 19, 20]).sample,
+    name: Faker::Hacker.verb
+  )
+end
+events = Event.all
+
 puts 'Seed finished'
 puts "#{User.count} users created"
 puts "#{RegisteredApplication.count} registered apps created"
+puts "#{Event.count} events created"
