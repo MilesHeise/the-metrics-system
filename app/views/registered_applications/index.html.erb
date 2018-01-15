@@ -7,7 +7,7 @@
       <div class="media-body">
         <h4 class="media-heading">
           <%= link_to app.name, app %>
-          <small>Tracked since <%= app.created_at %></small>
+          <small>Tracked since <%= app.created_at.strftime('%A, %B %-d, %l:%M %P') %></small>
         </h4>
       </div>
     </div>

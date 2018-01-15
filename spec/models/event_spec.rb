@@ -9,7 +9,7 @@ RSpec.describe Event, type: :model do
   it { is_expected.to validate_presence_of(:registered_application) }
   it { is_expected.to validate_presence_of(:name) }
 
-  it { is_expected.to validate_length_of(:name).is_at_least(5) }
+  it { is_expected.to validate_length_of(:name).is_at_least(1) }
 
   describe 'attributes' do
     it 'has a registered_application_id attribute and a name attribute' do

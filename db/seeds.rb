@@ -31,7 +31,8 @@ member = User.create!(
   RegisteredApplication.create!(
     name:  Faker::Company.unique.bs,
     url:   Faker::Internet.unique.url,
-    user: member
+    user: member,
+    created_at: rand(10.years).seconds.ago
   )
 end
 
@@ -49,10 +50,11 @@ test_app = RegisteredApplication.create!(
   )
 end
 
-100.times do
+500.times do
   Event.create!(
     registered_application: registered_applications.where(id: [16, 17, 18, 19, 20]).sample,
-    name: Faker::Hacker.verb
+    name: Faker::Hacker.verb,
+    created_at: rand(1.years).seconds.ago
   )
 end
 events = Event.all
