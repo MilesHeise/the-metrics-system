@@ -35,6 +35,12 @@ member = User.create!(
   )
 end
 
+test_app = RegisteredApplication.create!(
+  name: 'YourTestApp',
+  url: 'http://localhost:4000',
+  user: member
+)
+
 # Create events
 100.times do
   Event.create!(
