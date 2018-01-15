@@ -1,27 +1,16 @@
 Rails.application.routes.draw do
-  get 'registered_applications/new'
-
-  get 'registered_applications/create'
-
-  get 'registered_applications/update'
-
-  get 'registered_applications/edit'
-
-  get 'registered_applications/destroy'
-
-  get 'registered_applications/show'
-
-  get 'registered_applications/index'
-
   root 'welcome#index'
-
-  get 'welcome/index'
 
   get 'welcome/about'
 
   devise_for :users
 
   resources :registered_applications
+
+  namespace :api, defaults: { format: :json } do
+    match '/events', to: 'events#preflight', via: [:options]
+    resources :events, only: [:create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
