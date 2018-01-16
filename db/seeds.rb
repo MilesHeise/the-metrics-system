@@ -45,7 +45,7 @@ test_app = RegisteredApplication.create!(
 # Create events
 100.times do
   Event.create!(
-    registered_application: registered_applications.sample,
+    registered_application: registered_applications.where.not(id: 21).sample,
     name: Faker::Hacker.verb
   )
 end

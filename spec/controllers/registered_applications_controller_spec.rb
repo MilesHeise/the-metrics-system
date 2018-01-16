@@ -187,14 +187,14 @@ RSpec.describe RegisteredApplicationsController, type: :controller do
     describe 'GET show' do
       it 'returns http redirect' do
         get :show, id: not_your_app.id
-        expect(response).to redirect_to(registered_applications_index_path)
+        expect(response).to redirect_to(registered_applications_path)
       end
     end
 
     describe 'GET edit' do
       it 'returns http redirect' do
         get :edit, id: not_your_app.id
-        expect(response).to redirect_to(registered_applications_index_path)
+        expect(response).to redirect_to(registered_applications_path)
       end
     end
 
@@ -204,14 +204,14 @@ RSpec.describe RegisteredApplicationsController, type: :controller do
         new_url = 'worldhelloworldhelloworld'
 
         put :update, id: not_your_app.id, registered_application: { name: new_name, url: new_url }
-        expect(response).to redirect_to(registered_applications_index_path)
+        expect(response).to redirect_to(registered_applications_path)
       end
     end
 
     describe 'DELETE destroy' do
       it 'returns http redirect' do
         delete :destroy, id: not_your_app.id
-        expect(response).to redirect_to(registered_applications_index_path)
+        expect(response).to redirect_to(registered_applications_path)
       end
     end
   end
