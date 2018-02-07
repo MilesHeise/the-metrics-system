@@ -1,13 +1,15 @@
-<h1>Your Registered Applications</h1>
+<h1 class="panel panel-primary">
+  <div class="panel-heading">Your Registered Applications</div>
+</h1>
 
 <div class="row">
   <div class="col-md-8">
   <% @registered_applications.each do |app| %>
     <div class="media">
       <div class="media-body">
-        <h4 class="media-heading">
+        <h4 class="media-heading text-dark">
           <%= link_to app.name, app %>
-          <small>Tracked since <%= app.created_at.strftime('%A, %B %-d, %l:%M %P') %></small>
+          <small class="text-success">Tracked since <%= app.created_at.strftime('%A, %B %-d, %l:%M %P') %></small>
         </h4>
       </div>
     </div>

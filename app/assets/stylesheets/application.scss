@@ -15,3 +15,43 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+$head-font: Futura, sans-serif;
+$small-font: Garamond, serif;
+$color: #808080;
+
+body {
+  background-color: #ffffe0;
+}
+
+h1 {
+  font-family: $head-font;
+}
+
+h3 {
+  font-family: $small-font;
+  color: $color;
+}
+
+h4 {
+  font-family: $small-font;
+  color: $color;
+}
+
+p {
+  font-size: 3rem;
+  font-family: $small-font;
+  color: $color;
+}
+
+li {
+  color: $color;
+}
+
+small {
+  font-family: $small-font;
+}
+
+.btn {
+  margin: 15px 0;
+}

@@ -1,6 +1,8 @@
-<h1>Welcome!</h1>
-<p>Some day perhaps there will be content here!</p>
-<p>Some day much later than that the sun will expand and engulf the Earth!</p>
+<div class="jumbotron">
+  <h1>Welcome to the Metrics System!</h1>
+  <p>Check on <%= link_to "your apps", registered_applications_path %></p>
+  <p>Or find out more <%= link_to "about", welcome_about_path %> how to use the site</p>
+</div>
 
 <% if user_signed_in? %>
   <%= link_to "Register An App?", new_registered_application_path, class: 'btn btn-success btn-lg' %>
