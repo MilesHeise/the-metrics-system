@@ -1,0 +1,12 @@
+%h1.panel.panel-success
+  .panel-heading Register a New Application
+
+.row
+  .col-md-4
+    %p Register an app to begin tracking metrics:
+    %ul
+      %li Name can be anything that helps you remember the app.
+      %li URL can be updated any time without interrupting service.
+
+  .col-md-8
+    = render :partial => 'form', :locals => { :registered_application => @registered_application }

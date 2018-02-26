@@ -32,3 +32,4 @@ gem 'turbolinks'
 gem 'devise'
 gem "chartkick"
 gem 'groupdate'
+gem 'haml'

@@ -1,0 +1,14 @@
+%h1.panel.panel-primary
+  .panel-heading Your Registered Applications
+
+.row
+  .col-md-8
+    - @registered_applications.each do |app|
+      .media
+        .media-body
+          %h4.media-heading.text-dark
+            = link_to app.name, app
+            %small.text-success Tracked since #{ app.created_at.strftime('%A, %B %-d, %l:%M %P') }
+
+  .col-md-4.text-center
+    = link_to 'Register Another App?', new_registered_application_path, class: 'btn btn-success btn-lg'

@@ -1,0 +1,7 @@
+.jumbotron
+  %h1 Welcome to the Metrics System!
+  %p Check on #{ link_to 'your apps', registered_applications_path }
+  %p Or find out more #{ link_to 'about', welcome_about_path } how to use the site
+
+- if user_signed_in?
+  = link_to 'Register An App?', new_registered_application_path, class: 'btn btn-success btn-lg'
