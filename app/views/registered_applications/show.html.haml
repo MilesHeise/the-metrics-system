@@ -1,0 +1,20 @@
+%h1.panel.panel-default
+  .panel-heading= @registered_application.name
+%small URL: #{ @registered_application.url } | You've been tracking this app |
+since #{ time_ago_in_words(@registered_application.created_at) } ago. |
+
+.row
+  .col-md-8
+    %h4.page-header Proportional frequency of events
+    = pie_chart @registered_application.events.group(:name).count
+    %h4.page-header Event frequency over time
+    = line_chart @registered_application.events.group(:name).group_by_month(:created_at).count
+
+  .col-md-4.text-center
+    = link_to 'Edit App Details?', |
+    edit_registered_application_path(@registered_application), |
+    class: 'btn btn-success btn-lg' |
+    %ul.list-group
+    - @events.each do |k,v|
+      %li.list-group-item.list-group-item-info
+        <strong>#{ k }:</strong> has happened <em>#{ v.count }</em> times

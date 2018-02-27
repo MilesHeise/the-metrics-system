@@ -1,0 +1,13 @@
+%h1.panel.panel-info
+  .panel-heading Edit Your App Registration Details
+
+.row
+  .col-md-4
+    %p Update your app details:
+
+  .col-md-8
+    = button_to 'Delete Registered App?', @registered_application, method: :delete, |
+    class: 'btn btn-danger', |
+    data: { confirm: 'You will lose all tracked data, even if you re-register.' } |
+
+    = render :partial => 'form', :locals => { :registered_application => @registered_application }
